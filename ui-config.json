@@ -1,0 +1,229 @@
+{
+    "baseUrl": "http://127.0.0.1:5000",
+    "components": [
+        {
+            "name": "controller1",
+            "endpoints": [
+                {
+                    "name": "create_entity",
+                    "mapping": "/api/controller1/entity",
+                    "requestType": "POST",
+                    "requestBody": {
+                        "entityName": "TestDto1",
+                        "fields": [
+                            {
+                                "displayName": "status",
+                                "codeName": "status",
+                                "fieldType": "TEXT",
+                                "required": true
+                            },
+                            {
+                                "displayName": "text_list",
+                                "codeName": "text_list",
+                                "fieldType": "LIST",
+                                "required": true,
+                                "element": {
+                                    "fieldType": "TEXT",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "displayName": "ID description",
+                                "codeName": "id",
+                                "fieldType": "NUMBER",
+                                "required": true
+                            },
+                            {
+                                "displayName": "Flag description",
+                                "codeName": "flag",
+                                "fieldType": "BOOL",
+                                "required": true
+                            },
+                            {
+                                "displayName": "Inner DTO",
+                                "codeName": "test_dto2",
+                                "fieldType": "CLASS",
+                                "required": true,
+                                "innerFields": [
+                                    {
+                                        "displayName": "description2",
+                                        "codeName": "description2",
+                                        "fieldType": "TEXT",
+                                        "required": false
+                                    },
+                                    {
+                                        "displayName": "Some description",
+                                        "codeName": "description1",
+                                        "fieldType": "TEXT",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "create_entity",
+                    "mapping": "/api/controller1/entity",
+                    "requestType": "PUT",
+                    "requestBody": {
+                        "entityName": "TestDto1",
+                        "fields": [
+                            {
+                                "displayName": "status",
+                                "codeName": "status",
+                                "fieldType": "TEXT",
+                                "required": true
+                            },
+                            {
+                                "displayName": "text_list",
+                                "codeName": "text_list",
+                                "fieldType": "LIST",
+                                "required": true,
+                                "element": {
+                                    "fieldType": "TEXT",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "displayName": "ID description",
+                                "codeName": "id",
+                                "fieldType": "NUMBER",
+                                "required": true
+                            },
+                            {
+                                "displayName": "Flag description",
+                                "codeName": "flag",
+                                "fieldType": "BOOL",
+                                "required": true
+                            },
+                            {
+                                "displayName": "Inner DTO",
+                                "codeName": "test_dto2",
+                                "fieldType": "CLASS",
+                                "required": true,
+                                "innerFields": [
+                                    {
+                                        "displayName": "description2",
+                                        "codeName": "description2",
+                                        "fieldType": "TEXT",
+                                        "required": false
+                                    },
+                                    {
+                                        "displayName": "Some description",
+                                        "codeName": "description1",
+                                        "fieldType": "TEXT",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Retrieve entity",
+                    "mapping": "/api/controller1/entity",
+                    "requestType": "GET",
+                    "queryParams": [
+                        {
+                            "displayName": "Entity ID",
+                            "codeName": "id",
+                            "fieldType": "NUMBER",
+                            "required": true
+                        }
+                    ],
+                    "responseBody": [
+                        {
+                            "displayName": "status",
+                            "codeName": "status",
+                            "fieldType": "TEXT",
+                            "required": true
+                        },
+                        {
+                            "displayName": "text_list",
+                            "codeName": "text_list",
+                            "fieldType": "LIST",
+                            "required": true,
+                            "element": {
+                                "fieldType": "TEXT",
+                                "required": true
+                            }
+                        },
+                        {
+                            "displayName": "ID description",
+                            "codeName": "id",
+                            "fieldType": "NUMBER",
+                            "required": true
+                        },
+                        {
+                            "displayName": "Flag description",
+                            "codeName": "flag",
+                            "fieldType": "BOOL",
+                            "required": true
+                        },
+                        {
+                            "displayName": "Inner DTO",
+                            "codeName": "test_dto2",
+                            "fieldType": "CLASS",
+                            "required": true,
+                            "innerFields": [
+                                {
+                                    "displayName": "description2",
+                                    "codeName": "description2",
+                                    "fieldType": "TEXT",
+                                    "required": false
+                                },
+                                {
+                                    "displayName": "Some description",
+                                    "codeName": "description1",
+                                    "fieldType": "TEXT",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "controller2",
+            "endpoints": [
+                {
+                    "name": "Entity ID",
+                    "mapping": "/api/controller2/example/{entity_id}",
+                    "requestType": "DELETE",
+                    "pathParams": [
+                        {
+                            "displayName": "Entity ID",
+                            "codeName": "entity_id",
+                            "fieldType": "NUMBER",
+                            "required": true
+                        }
+                    ],
+                    "queryParams": [
+                        {
+                            "displayName": "id2",
+                            "codeName": "id2",
+                            "fieldType": "NUMBER",
+                            "required": true
+                        }
+                    ],
+                    "responseBody": [
+                        {
+                            "displayName": "description2",
+                            "codeName": "description2",
+                            "fieldType": "TEXT",
+                            "required": false
+                        },
+                        {
+                            "displayName": "Some description",
+                            "codeName": "description1",
+                            "fieldType": "TEXT",
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
