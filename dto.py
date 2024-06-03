@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import date
 from enum import Enum
 from typing import Optional
 
@@ -24,4 +25,5 @@ class TestDto1:
     # Unfortunately, fields with default values must go at the end
     id: int = ui_field("ID description", min=0)
     flag: bool = ui_field("Flag description")
+    some_date: str = ui_field("Custom date", date_format="yyyy/MM/dd")
     test_dto2: TestDto2 = ui_field("Inner DTO")
